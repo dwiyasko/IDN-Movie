@@ -1,11 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/idn_nav_graph"
+    android:id="@+id/gli_nav_graph"
     app:startDestination="@id/mainScreen">
 
     <fragment
         android:id="@+id/mainScreen"
         android:name="com.example.idnmedia.movielist.presentation.MovieListFragment">
+        <action
+            android:id="@+id/goto_movieDetail"
+            app:destination="@id/detailScreen"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popUpTo="@id/mainScreen">
+            <argument
+                android:name="key.movieId"
+                app:argType="long" />
+        </action>
     </fragment>
+
+    <fragment
+        android:id="@+id/detailScreen"
+        android:name="com.example.idnmedia.moviedetail.presentation.MovieDetailFragment">
+        <action
+            android:id="@+id/goto_reviewScreen"
+            app:destination="@id/reviewScreen"
+            app:enterAnim="@anim/slide_in_bottom"
+            app:exitAnim="@anim/slide_out_bottom"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popUpTo="@id/detailScreen">
+            <argument
+                android:name="key.movieId"
+                app:argType="long" />
+            <argument
+                android:name="key.movieTitle"
+                app:argType="string" />
+        </action>
+    </fragment>
+
+    <fragment
+        android:id="@+id/reviewScreen"
+        android:name="com.example.idnmedia.moviedetail.presentation.userreview.UserReviewFragment" />
+
 </navigation>

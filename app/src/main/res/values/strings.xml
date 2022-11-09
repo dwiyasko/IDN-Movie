@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">IDN Movie</string>
+
+    <string name="voters_count_label">%d Voters</string>
+    <string name="rating_placeholder">/10</string>
+    <string name="posted_at_label">Posted at %s</string>
+    <string name="see_all_cta">See all</string>
+    <string name="review_info_label">%d Review</string>
+    <string name="trailer_not_available_label">Youtube trailer not available yet for this movie</string>
 </resources>

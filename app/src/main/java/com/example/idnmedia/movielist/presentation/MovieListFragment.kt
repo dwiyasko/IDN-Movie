@@ -4,11 +4,13 @@ import android.view.LayoutInflater
 import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.idnmedia.common.BaseFragment
 import com.example.idnmedia.databinding.FragmentMainBinding
 import com.example.idnmedia.movielist.domain.model.Movie
+import com.example.idnmedia.movielist.presentation.MovieListFragmentDirections.gotoMovieDetail
 import com.example.idnmedia.movielist.presentation.adapter.MovieAdapter
 import com.example.idnmedia.movielist.presentation.adapter.MovieViewHolder
 import dagger.hilt.android.AndroidEntryPoint
@@ -27,7 +29,9 @@ class MovieListFragment : BaseFragment<FragmentMainBinding>() {
     }
 
     override fun FragmentMainBinding.initView() {
-        movieAdapter = MovieAdapter {}
+        movieAdapter = MovieAdapter {
+            findNavController().navigate(gotoMovieDetail(it.id))
+        }
         movieAdapter?.setUpListener()
 
         movieList.apply {

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="16dp">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/avatarImage"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ava_sample" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/authorName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        app:layout_constraintBottom_toBottomOf="@id/avatarImage"
+        app:layout_constraintStart_toEndOf="@id/avatarImage"
+        app:layout_constraintTop_toTopOf="@id/avatarImage"
+        tools:text="Sanjaya" />
+
+    <androidx.appcompat.widget.AppCompatRatingBar
+        android:id="@+id/starIcon"
+        style="?android:attr/ratingBarStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:numStars="1"
+        android:rating="1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/avatarImage" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/ratingValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/starIcon"
+        app:layout_constraintStart_toEndOf="@id/starIcon"
+        app:layout_constraintTop_toTopOf="@id/starIcon"
+        tools:text="8" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/ratingPlaceHolder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/rating_placeholder"
+        android:textSize="12dp"
+        app:layout_constraintBottom_toBottomOf="@id/starIcon"
+        app:layout_constraintStart_toEndOf="@id/ratingValue"
+        app:layout_constraintTop_toTopOf="@id/starIcon" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/postedDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:textSize="12dp"
+        app:layout_constraintBottom_toBottomOf="@id/starIcon"
+        app:layout_constraintStart_toEndOf="@id/ratingPlaceHolder"
+        app:layout_constraintTop_toTopOf="@id/starIcon"
+        tools:text="8 October 2022" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/reviewContent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:ellipsize="end"
+        android:maxLines="3"
+        app:layout_constraintTop_toBottomOf="@id/starIcon"
+        tools:text="It sure has been a long wait for the sequel (7 years to be precise) but I think it's safe to say that the film does not disappoint. While the film lacks a strong plot and is louder than its prequel, it easily covers up with delightful comedy, a sprinkle of nostalgia and a satisfying dose of lovable Minions!" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
